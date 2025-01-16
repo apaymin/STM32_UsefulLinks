@@ -22,6 +22,10 @@
 
 1. [UM1725](https://www.st.com/resource/en/user_manual/um1725-description-of-stm32f4-hal-and-lowlayer-drivers-stmicroelectronics.pdf) - HAL и LL для STM32F4
 
+# I2C
+
+1. [Настройка и использование I2C](https://microtechnics.ru/stm32-i2c-nastrojka-i-primer-ispolzovaniya-shiny-i2c/).
+
 # USB
 
 1. [AN4879](https://www.st.com/resource/en/application_note/an4879-introduction-to-usb-hardware-and-pcb-guidelines-using-stm32-mcus-stmicroelectronics.pdf) - Introduction to USB hardware and PCB guidelines using STM32 MCUs
@@ -34,8 +38,10 @@
 
 # Отладка
 
+[Настройка отладки по SWO в Keil](swo_keil.md) - собрал информацию с нескольких сайтов и свёл в одну статью способ, работающий у меня
+
+## DIY ST_Link
+
 [DIY-программатор ST-Link V2.1 с Хабра](https://habr.com/ru/articles/749474/)
 
 [DIY ST-Link](https://stm32world.com/wiki/DIY_STM32_Programmer_(ST-Link/V2-1))
-
-[Настройка отладки по SWO в Keil](swo_keil.md) - собрал информацию с нескольких сайтов и свёл в одну статью способ, работающий у меня
