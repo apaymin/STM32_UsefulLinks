@@ -58,13 +58,13 @@ printf(" Device started\n");
 
 Переходим во вкладку `Debug`. Здесь необходимо выбрать отладчик (я использую `ST-Link v2` на плате `Discovery`, поэтому выбираю `ST-Link Debugger`) и перейти в его настройки, нажав на кнопку `Settings`.
 
-![Окно Debug](imgs\options_debug.png "Окно Debug")
+![Окно Debug](imgs/options_debug.png "Окно Debug")
 
 Во вкладке `Debug` убеждаемся, что наш отладчик определяется и переходим во вкладку `Trace`.
 
-![Вкладка Trace окна Driver Setup](imgs\options_debug_trace.png "Вкладка Trace окна Driver Setup")
+![Вкладка Trace окна Driver Setup](imgs/options_debug_trace.png "Вкладка Trace окна Driver Setup")
 
-Здесь нужно произвести следующие изменения (см. [рисунок](imgs\options_debug_trace.png)):
+Здесь нужно произвести следующие изменения (см. [рисунок](imgs/options_debug_trace.png)):
 
 1. Записать значение частоты ядра `Core Clock` (выбирается при конфигурации контроллера);
 2. Включить опцию `Trace Enable`;
