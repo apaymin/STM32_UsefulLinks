@@ -37,3 +37,5 @@
 [DIY-программатор ST-Link V2.1 с Хабра](https://habr.com/ru/articles/749474/)
 
 [DIY ST-Link](https://stm32world.com/wiki/DIY_STM32_Programmer_(ST-Link/V2-1))
+
+[Настройка отладки по SWO в Keil](swo_keil.md) - собрал информацию с нескольких сайтов и свёл в одну статью способ, работающий у меня
