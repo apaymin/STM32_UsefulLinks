@@ -36,12 +36,34 @@
 
 4. [Подтяжка с транзистором, русский форум](http://forum.easyelectronics.ru/viewtopic.php?f=14&t=15396)
 
+
+
+
 # Отладка
 
 [Настройка отладки по SWO в Keil](swo_keil.md) - собрал информацию с нескольких сайтов и свёл в одну статью способ, работающий у меня
 
-## DIY ST_Link
+## DIY ST-Link
 
-[DIY-программатор ST-Link V2.1 с Хабра](https://habr.com/ru/articles/749474/)
+1. [DIY-программатор ST-Link V2.1 с Хабра](https://habr.com/ru/articles/749474/)
 
-[DIY ST-Link](https://stm32world.com/wiki/DIY_STM32_Programmer_(ST-Link/V2-1))
+2. [DIY ST-Link](https://stm32world.com/wiki/DIY_STM32_Programmer_(ST-Link/V2-1))
+
+
+
+
+# Настройка среды
+
+## VSCode + CMake
+
+1. [Использование ST'шного расширения для VSCode](https://zenembed.com/ru/vscode-cubemx-guide)
+
+2. [Использование только CMake](https://zenembed.com/ru/vscode-cubemx-pro-guide)
+
+## Keil + STM32CubeMX
+
+1. [STM32CubeIDE -> STM32CubeMX -> Keil](https://www.keil.com/appnotes/files/apnt_323.pdf) - удобная , но костыльная миграция из CubeIDE в Keil  
+
+2. [Установка пакетов для Keil](https://www.eng.auburn.edu/~nelsovp/courses/elec2220/arm_keil/Install_ARM_MDK_and_PACKS.pdf)
+
+3. [Пакет для STM32F4](https://www.keil.arm.com/packs/stm32f4xx_dfp-keil/overview/)
