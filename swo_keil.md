@@ -1,5 +1,16 @@
 # Отладка по SWO в ARM Keil µVision v5.38
 
+## Конфигурация контроллера
+
+При конфигурации контроллера в `STM32CubeMX` или `STM32CubeIDE` для использования `SWO` необходимо выбрать опцию `Trace Asynchronous Sw` (использование интерфейса `SWD` с `SWO`).
+
+![Включение SWO](imgs/sys_debug.png "Включение SWO")  
+
+Также во вкладке `Clock Configuration` необходимо уточнить значение тактовой частоты ядра (`Core Clock`), которое пригодится позже.
+
+
+
+
 ## Редактирование кода
 
 Необходимо подключить библиотеку `stdio.h` и добавить определения регистров `DEMCR` (Debug Exception and Monitor Control Register) и битовой маски `TRCENA` (Global enable for all DWT and ITM features). Подробнее см. [здесь](https://developer.arm.com/documentation/ddi0403/d/Debug-Architecture/ARMv7-M-Debug/Debug-register-support-in-the-SCS/Debug-Exception-and-Monitor-Control-Register--DEMCR?lang=en "ARMv7-M Debug").
@@ -21,6 +32,7 @@
 
 В этом же файле определим функцию для вывода отладочной информации.
 
+
 ```c
 /* USER CODE BEGIN 4 */
 int fputc(int ch, FILE *f)
@@ -34,15 +46,45 @@ int fputc(int ch, FILE *f)
 /* USER CODE END 4 */
 ```
 
+> **Важно!** Функция `fputc` используется для вывода отладочной информации при отладке в `Keil uVision`. При использовании `STM32CubeIde` необходимо использовать другую функцию:
+>
+> ```c
+> /* USER CODE BEGIN 4 */
+>int __io_putchar(int ch)
+>{
+>     ITM_SendChar(ch);
+>     return (ch);
+>}
+> /* USER CODE END 4 */
+>```
+> Функции не конфликтуют между собой, поэтому для универсальности можно писать так:
+> ```c
+>/* USER CODE BEGIN 4 */
+>int fputc(int ch, FILE *f) 	// For Keil uVision
+>{
+>    if(DEMCR & TRCENA)
+>    {
+>        ITM_SendChar(ch);
+>    }
+>    return(ch);
+>}
+>
+>int __io_putchar(int ch)	// For STM32CubeIDE
+>{
+>     ITM_SendChar(ch);
+>     return (ch);
+>}
+>/* USER CODE END 4 */
+>```
+> Подробнее про работу с STM32CubeIDE см. [здесь](/swo_cube_ide.md).
+
 Сама информация выводится с помощью функции `printf()`. Например, так:
 
 ```c
 /* USER CODE BEGIN 2 */
-printf(" Device started\n");
+printf("Device started\n");
 /* USER CODE END 2 */
 ```
-
-> **Важно!** По неизвестной мне причине, первый символ самого первого сообщения не выводится, поэтому в коде выше первый символ - пробел.
 
 
 ## Настройка среды
