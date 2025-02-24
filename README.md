@@ -1,5 +1,12 @@
 # Полезные ссылки для STM32
 
+# ADC
+
+1. [АЦП с HAL](https://istarik.ru/blog/stm32/113.html)
+2. [HAL. ADC. Regular Channel](https://narodstream.ru/stm-urok-16-hal-adc-regular-channel/)
+
+  
+
 # CAN
 
 ## bxCAN (для F4 и младше)
